@@ -93,14 +93,23 @@
         android:id="@+id/buttonGetAllData"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
         android:background="#CE9090"
         android:text="Get all kickboxers"
         android:textColorLink="@android:color/primary_text_dark"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSave" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSave"
+        app:layout_constraintBottom_toTopOf="@id/buttonNextActivity"/>
+
+    <Button
+        android:id="@+id/buttonNextActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch to another activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGetAllData" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

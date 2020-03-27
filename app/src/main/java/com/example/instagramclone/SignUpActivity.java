@@ -32,6 +32,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     private String allKickBoxers;
 
+    private  Button buttonTransition;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         edtKickPower = findViewById(R.id.edtKickPower);
         txtGetData = findViewById(R.id.txtGetData);
         buttonGetAllData = findViewById(R.id.buttonGetAllData);
+
+        buttonTransition = findViewById(R.id.buttonNextActivity);
 
         txtGetData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +71,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             public void onClick(View v) {
                 allKickBoxers="";
                 ParseQuery<ParseObject> queryAll = ParseQuery.getQuery("KickBoxer");
+                queryAll.whereGreaterThan("punchPower", 2000);
                 queryAll.findInBackground(new FindCallback<ParseObject>() {
                     @Override
                     public void done(List<ParseObject> objects, ParseException e) {
@@ -96,6 +101,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 });
             }
         });
+
+        buttonTransition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 
     @Override
